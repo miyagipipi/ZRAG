@@ -58,6 +58,7 @@ from .operate import (
     query_with_keywords,
 )
 from .prompt import GRAPH_FIELD_SEP
+from .prompt_config import BasePromptSettings, cn_prompt_settings
 from .utils import (
     Tokenizer,
     TiktokenTokenizer,
@@ -281,6 +282,9 @@ class LightRAG:
     )
 
     _storages_status: StoragesStatus = field(default=StoragesStatus.NOT_CREATED)
+    
+    # Prompt settings
+    prompt_settings: BasePromptSettings = field(default_factory=lambda: cn_prompt_settings)
 
     def __post_init__(self):
         from lightrag.kg.shared_storage import (

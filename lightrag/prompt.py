@@ -1,5 +1,7 @@
 from __future__ import annotations
 from typing import Any
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
 
 GRAPH_FIELD_SEP = "<SEP>"
 
@@ -354,3 +356,31 @@ Similarity score criteria:
 0.5: Partially related and answer needs modification to be used
 Return only a number between 0-1, without any additional content.
 """
+
+
+class PromptSettings(BaseSettings):
+    default_language: str = PROMPTS["DEFAULT_LANGUAGE"]
+    default_tuple_delimiter: str = PROMPTS["DEFAULT_TUPLE_DELIMITER"]
+    default_record_delimiter: str = PROMPTS["DEFAULT_RECORD_DELIMITER"]
+    default_completion_delimiter: str = PROMPTS["DEFAULT_COMPLETION_DELIMITER"]
+    default_entity_types: list[str] = PROMPTS["DEFAULT_ENTITY_TYPES"]
+    default_user_prompt: str = PROMPTS["DEFAULT_USER_PROMPT"]
+    entity_extraction: str = PROMPTS["entity_extraction"]
+    entity_extraction_examples: list[str] = PROMPTS["entity_extraction_examples"]
+    summarize_entity_descriptions: str = PROMPTS["summarize_entity_descriptions"]
+    entity_continue_extraction: str = PROMPTS["entity_continue_extraction"]
+    entity_if_loop_extraction: str = PROMPTS["entity_if_loop_extraction"]
+    fail_response: str = PROMPTS["fail_response"]
+    rag_response: str = PROMPTS["rag_response"]
+    keywords_extraction: str = PROMPTS["keywords_extraction"]
+    keywords_extraction_examples: list[str] = PROMPTS["keywords_extraction_examples"]
+    naive_rag_response: str = PROMPTS["naive_rag_response"]
+    similarity_check: str = PROMPTS["similarity_check"]
+    
+    model_config = SettingsConfigDict(
+        env_prefix="PROMPT_",
+        env_file="../prompt.env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra='ignore'
+    )

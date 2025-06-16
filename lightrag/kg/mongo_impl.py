@@ -310,6 +310,17 @@ class MongoDocStatusStorage(DocStatusStorage):
         except PyMongoError as e:
             logger.error(f"Error dropping doc status {self._collection_name}: {e}")
             return {"status": "error", "message": str(e)}
+    
+    async def delete(self, ids: list[str]) -> None:
+        """Delete documents with specified IDs"""
+        if not ids:
+            return
+        try:
+            result = await self._data.delete_many({"_id": {"$in": ids}})
+            logger.info(f"Deleted {result.deleted_count} documents from {self.namespace}")
+        except PyMongoError as e:
+            logger.error(f"Error deleting documents from {self.namespace}: {e}")
+            raise
 
 
 @final
