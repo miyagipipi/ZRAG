@@ -704,8 +704,6 @@ class LightRAG:
 
         # If file_paths is provided, ensure it matches the number of documents
         if file_paths is not None:
-            if isinstance(file_paths, str):
-                file_paths = [file_paths]
             if len(file_paths) != len(input):
                 raise ValueError(
                     "Number of file paths must match the number of documents"
@@ -725,44 +723,27 @@ class LightRAG:
                 raise ValueError("IDs must be unique")
 
             # Generate contents dict of IDs provided by user and documents
-            contents = {
-                id_: {"content": doc, "file_path": path}
-                for id_, doc, path in zip(ids, input, file_paths)
-            }
+            contents = {}
+            unique_contents = set()
+            for id_, doc, path in zip(ids, input, file_paths):
+                if doc not in unique_contents:
+                    unique_contents.add(doc)
+                    contents[id_] = {
+                        'content': doc,
+                        'file_path': path
+                    }
         else:
-            # Clean input text and remove duplicates
-            cleaned_input = [
-                (clean_text(doc), path) for doc, path in zip(input, file_paths)
-            ]
-            unique_content_with_paths = {}
+            contents = {}
+            for doc, path in zip(input, file_paths):
+                clean_input = clean_text(doc)
+                computed_id = compute_mdhash_id(clean_input, prefix="doc-")
+                if computed_id not in contents:
+                    contents[computed_id] = {
+                        "content": clean_input,
+                        "file_path": path,
+                    }
 
-            # Keep track of unique content and their paths
-            for content, path in cleaned_input:
-                if content not in unique_content_with_paths:
-                    unique_content_with_paths[content] = path
-
-            # Generate contents dict of MD5 hash IDs and documents with paths
-            contents = {
-                compute_mdhash_id(content, prefix="doc-"): {
-                    "content": content,
-                    "file_path": path,
-                }
-                for content, path in unique_content_with_paths.items()
-            }
-
-        # 2. Remove duplicate contents
-        unique_contents = {}
-        for id_, content_data in contents.items():
-            content = content_data["content"]
-            file_path = content_data["file_path"]
-            if content not in unique_contents:
-                unique_contents[content] = (id_, file_path)
-
-        # Reconstruct contents with unique content
-        contents = {
-            id_: {"content": content, "file_path": file_path}
-            for content, (id_, file_path) in unique_contents.items()
-        }
+        # 2. Remove duplicate contents not need remove duplicate contents because if-else has do it
 
         # 3. Generate document initial status
         new_docs: dict[str, Any] = {
