@@ -100,6 +100,225 @@ def chunking_by_token_size(
     return results
 
 
+def chunking_text(
+    tokenizer: Tokenizer,
+    content: str,
+    split_by_character: str | None = None,
+    split_by_character_only: bool = False,
+    overlap_token_size: int = 300,
+    max_token_size: int = 8000,
+) -> list[dict[str, Any]]:
+    
+    tokens = tokenizer.encode(content)
+    token_size = len(tokens)
+    results: list[dict[str, Any]] = []
+    
+    if split_by_character:
+        raw_chunks = content.split(split_by_character)
+        new_chunks = []
+        if split_by_character_only:
+            for chunk in raw_chunks:
+                token_num = tokenizer.count_token(chunk)
+                new_chunks.append((token_num, chunk))
+        else:
+            for chunk in raw_chunks:
+                token_num = tokenizer.count_token(chunk)
+                if token_num > max_token_size:
+                    for start in range(0, token_num, max_token_size-overlap_token_size):
+                        chunk_content = tokenizer.decode(chunk[start : start+max_token_size])
+                        new_chunks.append((
+                            min(max_token_size, token_num-start),
+                            chunk_content
+                        ))
+                else:
+                    new_chunks.append((token_num, chunk))
+        for index, (length, chunk) in enumerate(new_chunks):
+            results.append(
+                {
+                    "tokens": length,
+                    "content": chunk.strip(),
+                    "chunk_order_index": index,
+                }
+            )
+    else:
+        end_token = 0
+        index = 0
+        split_chars = {"。", "\n", "\t", "！", "？", "!", "?",}
+        
+        while end_token < token_size:
+            start = max(0, end_token-overlap_token_size)
+            end = min(start+max_token_size, token_size)
+            
+            if end == token_size and end - start <= max_token_size:
+                chunk = tokenizer.decode(tokens[start:end]).rstrip()
+                results.append(
+                    {
+                        "tokens": min(max_token_size, len(tokens) - start),
+                        "content": chunk.strip(),
+                        "chunk_order_index": index,
+                    }
+                )
+                break
+            
+            initial_end = end
+            fallback_limit = 500
+            while end > start and (initial_end - end) < fallback_limit:
+                chunk = tokenizer.decode(tokens[start:end]).rstrip()
+                if chunk[-1] in split_chars:
+                    break
+                end -= 1
+            if end == start:
+                end = min(start+max_token_size, token_size)
+                chunk = tokenizer.decode(tokens[start:end]).rstrip()
+        
+            results.append(
+                {
+                    "tokens": min(max_token_size, len(tokens) - start),
+                    "content": chunk.strip(),
+                    "chunk_order_index": index,
+                }
+            )
+            index += 1
+            end_token = end
+    return results
+
+
+def chunking_markdown_plus(
+    tokenizer: Tokenizer,  # 必须提供 count_token(str) -> int 接口
+    content: str,
+    split_by_character: str | None = None,   # 可选：强制按指定字符切分
+    split_by_character_only: bool = False,
+    overlap_token_size: int = 300,
+    max_token_size: int = 2000,
+) -> list[dict[str, Any]]:
+    if '\n' in content:
+        print(r'split by \n')
+        lines = content.split("\n")
+    elif '  ' in content:
+        print(r'split by two spaces')
+        lines = content.split("  ")
+    else:
+        # fallback：按句号切
+        line = re.split(r"(?<=[。.!?])\s*", content)
+    header_stack: list[tuple[int, str]] = []
+    current_section_lines = []
+    code_block = False
+    result: list[dict[str, Any]] = []
+    chunk_index = 0
+    header_path_separator = '/'
+
+    def _split_text_by_token(text: str) -> list[str]:
+        """
+        将文本按 token 拆分为多个片段，每个片段最多 max_token_size 个 token，并有 overlap。
+        简单实现，按句子或段落（. ! ? \n）粗略切分后再拼接。
+        """
+        if split_by_character_only and split_by_character:
+            rough_splits = text.split(split_by_character)
+        else:
+            # 默认按换行或句号拆分为候选子句
+            rough_splits = re.split(r'(?<=[。！？!?])\s*|\n+', text)
+
+        chunks = []
+        current_chunk = []
+        current_tokens = 0
+
+        for seg in rough_splits:
+            seg = seg.strip()
+            if not seg:
+                continue
+            seg_tokens = tokenizer.count_token(seg)
+            if seg_tokens > max_token_size:
+                # 单句太长，强行截断（可以再细拆）
+                chunks.append(seg)
+                continue
+
+            if current_tokens + seg_tokens > max_token_size:
+                # 截断，保留 overlap
+                full_text = ''.join(current_chunk).strip()
+                if full_text:
+                    chunks.append(full_text)
+
+                # 滚动窗口重建 current_chunk
+                if overlap_token_size > 0:
+                    overlap_tokens = []
+                    token_count = 0
+                    for s in reversed(current_chunk):
+                        t = tokenizer.count_token(s)
+                        if token_count + t > overlap_token_size:
+                            break
+                        token_count += t
+                        overlap_tokens.insert(0, s)
+                    current_chunk = overlap_tokens
+                    current_tokens = sum(tokenizer.count_token(s) for s in current_chunk)
+                else:
+                    current_chunk = []
+                    current_tokens = 0
+
+            current_chunk.append(seg)
+            current_tokens += seg_tokens
+
+        if current_chunk:
+            chunks.append(''.join(current_chunk).strip())
+
+        return chunks
+
+    def _build_node_from_split(text_split: str, header_path: str):
+        nonlocal chunk_index
+        chunk_header_path = (
+            header_path_separator + header_path + header_path_separator
+            if header_path else header_path_separator
+        )
+        new_content = chunk_header_path + text_split.strip()
+        
+        chunk_dict = {
+            "tokens": tokenizer.count_token(new_content),
+            "content": new_content,
+            "chunk_order_index": chunk_index,
+        }
+        result.append(chunk_dict)
+        chunk_index += 1
+
+    def flush_section():
+        if not current_section_lines:
+            return
+        raw_text = '\n'.join(current_section_lines).strip()
+        if not raw_text:
+            return
+
+        sub_chunks = _split_text_by_token(raw_text)
+        full_header_path = header_path_separator.join(h[1] for h in header_stack)
+
+        for chunk_text in sub_chunks:
+            _build_node_from_split(chunk_text, full_header_path)
+
+    # 主循环：按 markdown 标题切块
+    for line in lines:
+        if line.lstrip().startswith("```"):
+            code_block = not code_block
+            current_section_lines.append(line)
+            continue
+
+        if not code_block:
+            header_match = re.match(r"^(#{1,6})\s+(.*)", line)
+            if header_match:
+                flush_section()
+
+                header_level = len(header_match.group(1))
+                header_text = header_match.group(2).strip()
+
+                while header_stack and header_stack[-1][0] >= header_level:
+                    header_stack.pop()
+
+                header_stack.append((header_level, header_text))
+                current_section_lines = [line]
+                continue
+
+        current_section_lines.append(line)
+
+    flush_section()
+    return result
+
+
 async def _handle_entity_relation_summary(
     entity_or_relation_name: str,
     description: str,

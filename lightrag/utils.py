@@ -670,6 +670,10 @@ class Tokenizer:
             The decoded string.
         """
         return self.tokenizer.decode(tokens)
+    
+    def count_token(self, text: str) -> int:
+        # 使用tokenizer对text进行编码，并返回编码后的token数量
+        return len(self.tokenizer.encode(text))
 
 
 class TiktokenTokenizer(Tokenizer):
