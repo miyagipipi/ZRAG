@@ -1,6 +1,5 @@
 from __future__ import annotations
 from typing import Any
-from pydantic_settings import BaseSettings
 from .base_prompt import BasePromptSettings
 
 
