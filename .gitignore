@@ -60,9 +60,9 @@ ignore_this.txt
 # Project-specific files
 dickens*/
 book.txt
-LightRAG.pdf
+ZestRAG.pdf
 download_models_hf.py
-lightrag-dev/
+zestrag-dev/
 gui/
 
 # unit-test files

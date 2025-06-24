@@ -1,180 +1,180 @@
-<center><h2>🚀 LightRAG: Simple and Fast Retrieval-Augmented Generation</h2></center>
+<center><h2>🚀 ZestRAG: Simple and Fast Retrieval-Augmented Generation</h2></center>
 
 <div align="center">
 <table border="0" width="100%">
 <tr>
 <td width="100" align="center">
-<img src="./assets/logo.png" width="80" height="80" alt="lightrag">
+<img src="./assets/logo.png" width="80" height="80" alt="zestrag">
 </td>
 <td>
 
 <div>
     <p>
-        <a href='https://lightrag.github.io'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
+        <a href='https://zestrag.github.io'><img src='https://img.shields.io/badge/Project-Page-Green'></a>
         <a href='https://youtu.be/oageL-1I0GE'><img src='https://badges.aleen42.com/src/youtube.svg'></a>
         <a href='https://arxiv.org/abs/2410.05779'><img src='https://img.shields.io/badge/arXiv-2410.05779-b31b1b'></a>
-        <a href='https://learnopencv.com/lightrag'><img src='https://img.shields.io/badge/LearnOpenCV-blue'></a>
+        <a href='https://learnopencv.com/zestrag'><img src='https://img.shields.io/badge/LearnOpenCV-blue'></a>
     </p>
     <p>
-        <img src='https://img.shields.io/github/stars/hkuds/lightrag?color=green&style=social' />
+        <img src='https://img.shields.io/github/stars/hkuds/zestrag?color=green&style=social' />
         <img src="https://img.shields.io/badge/python-3.10-blue">
-        <a href="https://pypi.org/project/lightrag-hku/"><img src="https://img.shields.io/pypi/v/lightrag-hku.svg"></a>
-        <a href="https://pepy.tech/project/lightrag-hku"><img src="https://static.pepy.tech/badge/lightrag-hku/month"></a>
+        <a href="https://pypi.org/project/zestrag-hku/"><img src="https://img.shields.io/pypi/v/zestrag-hku.svg"></a>
+        <a href="https://pepy.tech/project/zestrag-hku"><img src="https://static.pepy.tech/badge/zestrag-hku/month"></a>
     </p>
     <p>
         <a href='https://discord.gg/yF2MmDJyGJ'><img src='https://discordapp.com/api/guilds/1296348098003734629/widget.png?style=shield'></a>
-        <a href='https://github.com/HKUDS/LightRAG/issues/285'><img src='https://img.shields.io/badge/群聊-wechat-green'></a>
+        <a href='https://github.com/HKUDS/ZestRAG/issues/285'><img src='https://img.shields.io/badge/群聊-wechat-green'></a>
     </p>
 </div>
 </td>
 </tr>
 </table>
 
-<img src="./README.assets/b2aaf634151b4706892693ffb43d9093.png" width="800" alt="LightRAG Diagram">
+<img src="./README.assets/b2aaf634151b4706892693ffb43d9093.png" width="800" alt="ZestRAG Diagram">
 
 </div>
 
 <div align="center">
-    <a href="https://trendshift.io/repositories/13043" target="_blank"><img src="https://trendshift.io/api/badge/repositories/13043" alt="HKUDS%2FLightRAG | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+    <a href="https://trendshift.io/repositories/13043" target="_blank"><img src="https://trendshift.io/api/badge/repositories/13043" alt="HKUDS%2FZestRAG | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 </div>
 
 ## 🎉 News
-- [X] [2025.06.05]🎯📢LightRAG now supports multi-modal data handling through MinerU integration, enabling comprehensive document parsing and RAG capabilities across diverse formats including PDFs, images, Office documents, tables, and formulas. Please refer to the new [multimodal section](https://github.com/HKUDS/LightRAG/?tab=readme-ov-file#multimodal-document-processing-mineru-integration) for details.
-- [X] [2025.03.18]🎯📢LightRAG now supports citation functionality, enabling proper source attribution.
+- [X] [2025.06.05]🎯📢ZestRAG now supports multi-modal data handling through MinerU integration, enabling comprehensive document parsing and RAG capabilities across diverse formats including PDFs, images, Office documents, tables, and formulas. Please refer to the new [multimodal section](https://github.com/HKUDS/ZestRAG/?tab=readme-ov-file#multimodal-document-processing-mineru-integration) for details.
+- [X] [2025.03.18]🎯📢ZestRAG now supports citation functionality, enabling proper source attribution.
 - [X] [2025.02.05]🎯📢Our team has released [VideoRAG](https://github.com/HKUDS/VideoRAG) understanding extremely long-context videos.
 - [X] [2025.01.13]🎯📢Our team has released [MiniRAG](https://github.com/HKUDS/MiniRAG) making RAG simpler with small models.
 - [X] [2025.01.06]🎯📢You can now [use PostgreSQL for Storage](#using-postgresql-for-storage).
-- [X] [2024.12.31]🎯📢LightRAG now supports [deletion by document ID](https://github.com/HKUDS/LightRAG?tab=readme-ov-file#delete).
-- [X] [2024.11.25]🎯📢LightRAG now supports seamless integration of [custom knowledge graphs](https://github.com/HKUDS/LightRAG?tab=readme-ov-file#insert-custom-kg), empowering users to enhance the system with their own domain expertise.
-- [X] [2024.11.19]🎯📢A comprehensive guide to LightRAG is now available on [LearnOpenCV](https://learnopencv.com/lightrag). Many thanks to the blog author.
-- [X] [2024.11.11]🎯📢LightRAG now supports [deleting entities by their names](https://github.com/HKUDS/LightRAG?tab=readme-ov-file#delete).
-- [X] [2024.11.09]🎯📢Introducing the [LightRAG Gui](https://lightrag-gui.streamlit.app), which allows you to insert, query, visualize, and download LightRAG knowledge.
-- [X] [2024.11.04]🎯📢You can now [use Neo4J for Storage](https://github.com/HKUDS/LightRAG?tab=readme-ov-file#using-neo4j-for-storage).
-- [X] [2024.10.29]🎯📢LightRAG now supports multiple file types, including PDF, DOC, PPT, and CSV via `textract`.
-- [X] [2024.10.20]🎯📢We've added a new feature to LightRAG: Graph Visualization.
-- [X] [2024.10.18]🎯📢We've added a link to a [LightRAG Introduction Video](https://youtu.be/oageL-1I0GE). Thanks to the author!
+- [X] [2024.12.31]🎯📢ZestRAG now supports [deletion by document ID](https://github.com/HKUDS/ZestRAG?tab=readme-ov-file#delete).
+- [X] [2024.11.25]🎯📢ZestRAG now supports seamless integration of [custom knowledge graphs](https://github.com/HKUDS/ZestRAG?tab=readme-ov-file#insert-custom-kg), empowering users to enhance the system with their own domain expertise.
+- [X] [2024.11.19]🎯📢A comprehensive guide to ZestRAG is now available on [LearnOpenCV](https://learnopencv.com/zestrag). Many thanks to the blog author.
+- [X] [2024.11.11]🎯📢ZestRAG now supports [deleting entities by their names](https://github.com/HKUDS/ZestRAG?tab=readme-ov-file#delete).
+- [X] [2024.11.09]🎯📢Introducing the [ZestRAG Gui](https://zestrag-gui.streamlit.app), which allows you to insert, query, visualize, and download ZestRAG knowledge.
+- [X] [2024.11.04]🎯📢You can now [use Neo4J for Storage](https://github.com/HKUDS/ZestRAG?tab=readme-ov-file#using-neo4j-for-storage).
+- [X] [2024.10.29]🎯📢ZestRAG now supports multiple file types, including PDF, DOC, PPT, and CSV via `textract`.
+- [X] [2024.10.20]🎯📢We've added a new feature to ZestRAG: Graph Visualization.
+- [X] [2024.10.18]🎯📢We've added a link to a [ZestRAG Introduction Video](https://youtu.be/oageL-1I0GE). Thanks to the author!
 - [X] [2024.10.17]🎯📢We have created a [Discord channel](https://discord.gg/yF2MmDJyGJ)! Welcome to join for sharing and discussions! 🎉🎉
-- [X] [2024.10.16]🎯📢LightRAG now supports [Ollama models](https://github.com/HKUDS/LightRAG?tab=readme-ov-file#quick-start)!
-- [X] [2024.10.15]🎯📢LightRAG now supports [Hugging Face models](https://github.com/HKUDS/LightRAG?tab=readme-ov-file#quick-start)!
+- [X] [2024.10.16]🎯📢ZestRAG now supports [Ollama models](https://github.com/HKUDS/ZestRAG?tab=readme-ov-file#quick-start)!
+- [X] [2024.10.15]🎯📢ZestRAG now supports [Hugging Face models](https://github.com/HKUDS/ZestRAG?tab=readme-ov-file#quick-start)!
 
 <details>
   <summary style="font-size: 1.4em; font-weight: bold; cursor: pointer; display: list-item;">
     Algorithm Flowchart
   </summary>
 
-![LightRAG Indexing Flowchart](https://learnopencv.com/wp-content/uploads/2024/11/LightRAG-VectorDB-Json-KV-Store-Indexing-Flowchart-scaled.jpg)
-*Figure 1: LightRAG Indexing Flowchart - Img Caption : [Source](https://learnopencv.com/lightrag/)*
-![LightRAG Retrieval and Querying Flowchart](https://learnopencv.com/wp-content/uploads/2024/11/LightRAG-Querying-Flowchart-Dual-Level-Retrieval-Generation-Knowledge-Graphs-scaled.jpg)
-*Figure 2: LightRAG Retrieval and Querying Flowchart - Img Caption : [Source](https://learnopencv.com/lightrag/)*
+![ZestRAG Indexing Flowchart](https://learnopencv.com/wp-content/uploads/2024/11/ZestRAG-VectorDB-Json-KV-Store-Indexing-Flowchart-scaled.jpg)
+*Figure 1: ZestRAG Indexing Flowchart - Img Caption : [Source](https://learnopencv.com/zestrag/)*
+![ZestRAG Retrieval and Querying Flowchart](https://learnopencv.com/wp-content/uploads/2024/11/ZestRAG-Querying-Flowchart-Dual-Level-Retrieval-Generation-Knowledge-Graphs-scaled.jpg)
+*Figure 2: ZestRAG Retrieval and Querying Flowchart - Img Caption : [Source](https://learnopencv.com/zestrag/)*
 
 </details>
 
 ## Installation
 
-### Install LightRAG Server
+### Install ZestRAG Server
 
-The LightRAG Server is designed to provide Web UI and API support. The Web UI facilitates document indexing, knowledge graph exploration, and a simple RAG query interface. LightRAG Server also provide an Ollama compatible interfaces, aiming to emulate LightRAG as an Ollama chat model. This allows AI chat bot, such as Open WebUI, to access LightRAG easily.
+The ZestRAG Server is designed to provide Web UI and API support. The Web UI facilitates document indexing, knowledge graph exploration, and a simple RAG query interface. ZestRAG Server also provide an Ollama compatible interfaces, aiming to emulate ZestRAG as an Ollama chat model. This allows AI chat bot, such as Open WebUI, to access ZestRAG easily.
 
 * Install from PyPI
 
 ```bash
-pip install "lightrag-hku[api]"
+pip install "zestrag-hku[api]"
 ```
 
 * Installation from Source
 
 ```bash
-git clone https://github.com/HKUDS/LightRAG.git
-cd LightRAG
+git clone https://github.com/HKUDS/ZestRAG.git
+cd ZestRAG
 # create a Python virtual enviroment if neccesary
 # Install in editable mode with API support
 pip install -e ".[api]"
 ```
 
-* Launching the LightRAG Server with Docker Compose
+* Launching the ZestRAG Server with Docker Compose
 
 ```
-git clone https://github.com/HKUDS/LightRAG.git
-cd LightRAG
+git clone https://github.com/HKUDS/ZestRAG.git
+cd ZestRAG
 cp env.example .env
 # modify LLM and Embedding settings in .env
 docker compose up
 ```
 
-> Historical versions of LightRAG docker images can be found here: [LightRAG Docker Images]( https://github.com/HKUDS/LightRAG/pkgs/container/lightrag)
+> Historical versions of ZestRAG docker images can be found here: [ZestRAG Docker Images]( https://github.com/HKUDS/ZestRAG/pkgs/container/zestrag)
 
-### Install  LightRAG Core
+### Install  ZestRAG Core
 
 * Install from source (Recommend)
 
 ```bash
-cd LightRAG
+cd ZestRAG
 pip install -e .
 ```
 
 * Install from PyPI
 
 ```bash
-pip install lightrag-hku
+pip install zestrag-hku
 ```
 
 ## Quick Start
 
-### Quick Start for LightRAG Server
+### Quick Start for ZestRAG Server
 
-* For more information about LightRAG Server, please refer to [LightRAG Server](./lightrag/api/README.md).
+* For more information about ZestRAG Server, please refer to [ZestRAG Server](./zestrag/api/README.md).
 
-### Quick Start for LightRAG core
+### Quick Start for ZestRAG core
 
-To get started with LightRAG core, refer to the sample codes available in the `examples` folder. Additionally, a [video demo](https://www.youtube.com/watch?v=g21royNJ4fw) demonstration is provided to guide you through the local setup process. If you already possess an OpenAI API key, you can run the demo right away:
+To get started with ZestRAG core, refer to the sample codes available in the `examples` folder. Additionally, a [video demo](https://www.youtube.com/watch?v=g21royNJ4fw) demonstration is provided to guide you through the local setup process. If you already possess an OpenAI API key, you can run the demo right away:
 
 ```bash
 ### you should run the demo code with project folder
-cd LightRAG
+cd ZestRAG
 ### provide your API-KEY for OpenAI
 export OPENAI_API_KEY="sk-...your_opeai_key..."
 ### download the demo document of "A Christmas Carol" by Charles Dickens
 curl https://raw.githubusercontent.com/gusye1234/nano-graphrag/main/tests/mock_data.txt > ./book.txt
 ### run the demo code
-python examples/lightrag_openai_demo.py
+python examples/zestrag_openai_demo.py
 ```
 
-For a streaming response implementation example, please see `examples/lightrag_openai_compatible_demo.py`. Prior to execution, ensure you modify the sample code’s LLM and embedding configurations accordingly.
+For a streaming response implementation example, please see `examples/zestrag_openai_compatible_demo.py`. Prior to execution, ensure you modify the sample code’s LLM and embedding configurations accordingly.
 
 **Note 1**: When running the demo program, please be aware that different test scripts may use different embedding models. If you switch to a different embedding model, you must clear the data directory (`./dickens`); otherwise, the program may encounter errors. If you wish to retain the LLM cache, you can preserve the `kv_store_llm_response_cache.json` file while clearing the data directory.
 
-**Note 2**: Only `lightrag_openai_demo.py` and `lightrag_openai_compatible_demo.py` are officially supported sample codes. Other sample files are community contributions that haven't undergone full testing and optimization.
+**Note 2**: Only `zestrag_openai_demo.py` and `zestrag_openai_compatible_demo.py` are officially supported sample codes. Other sample files are community contributions that haven't undergone full testing and optimization.
 
-## Programing with LightRAG Core
+## Programing with ZestRAG Core
 
-> If you would like to integrate LightRAG into your project, we recommend utilizing the REST API provided by the LightRAG Server. LightRAG Core is typically intended for embedded applications or for researchers who wish to conduct studies and evaluations.
+> If you would like to integrate ZestRAG into your project, we recommend utilizing the REST API provided by the ZestRAG Server. ZestRAG Core is typically intended for embedded applications or for researchers who wish to conduct studies and evaluations.
 
 ### ⚠️ Important: Initialization Requirements
 
-**LightRAG requires explicit initialization before use.** You must call both `await rag.initialize_storages()` and `await initialize_pipeline_status()` after creating a LightRAG instance, otherwise you will encounter errors like:
+**ZestRAG requires explicit initialization before use.** You must call both `await rag.initialize_storages()` and `await initialize_pipeline_status()` after creating a ZestRAG instance, otherwise you will encounter errors like:
 - `AttributeError: __aenter__` - if storages are not initialized
 - `KeyError: 'history_messages'` - if pipeline status is not initialized
 
 ### A Simple Program
 
-Use the below Python snippet to initialize LightRAG, insert text to it, and perform queries:
+Use the below Python snippet to initialize ZestRAG, insert text to it, and perform queries:
 
 ```python
 import os
 import asyncio
-from lightrag import LightRAG, QueryParam
-from lightrag.llm.openai import gpt_4o_mini_complete, gpt_4o_complete, openai_embed
-from lightrag.kg.shared_storage import initialize_pipeline_status
-from lightrag.utils import setup_logger
+from zestrag import ZestRAG, QueryParam
+from zestrag.llm.openai import gpt_4o_mini_complete, gpt_4o_complete, openai_embed
+from zestrag.kg.shared_storage import initialize_pipeline_status
+from zestrag.utils import setup_logger
 
-setup_logger("lightrag", level="INFO")
+setup_logger("zestrag", level="INFO")
 
 WORKING_DIR = "./rag_storage"
 if not os.path.exists(WORKING_DIR):
     os.mkdir(WORKING_DIR)
 
 async def initialize_rag():
-    rag = LightRAG(
+    rag = ZestRAG(
         working_dir=WORKING_DIR,
         embedding_func=openai_embed,
         llm_model_func=gpt_4o_mini_complete,
@@ -212,19 +212,19 @@ if __name__ == "__main__":
 Important notes for the above snippet:
 
 - Export your OPENAI_API_KEY environment variable before running the script.
-- This program uses the default storage settings for LightRAG, so all data will be persisted to WORKING_DIR/rag_storage.
-- This program demonstrates only the simplest way to initialize a LightRAG object: Injecting the embedding and LLM functions, and initializing storage and pipeline status after creating the LightRAG object.
+- This program uses the default storage settings for ZestRAG, so all data will be persisted to WORKING_DIR/rag_storage.
+- This program demonstrates only the simplest way to initialize a ZestRAG object: Injecting the embedding and LLM functions, and initializing storage and pipeline status after creating the ZestRAG object.
 
-### LightRAG init parameters
+### ZestRAG init parameters
 
-A full list of LightRAG init parameters:
+A full list of ZestRAG init parameters:
 
 <details>
 <summary> Parameters </summary>
 
 | **Parameter** | **Type** | **Explanation** | **Default** |
 |--------------|----------|-----------------|-------------|
-| **working_dir** | `str` | Directory where the cache will be stored | `lightrag_cache+timestamp` |
+| **working_dir** | `str` | Directory where the cache will be stored | `zestrag_cache+timestamp` |
 | **kv_storage** | `str` | Storage type for documents and text chunks. Supported types: `JsonKVStorage`,`PGKVStorage`,`RedisKVStorage`,`MongoKVStorage` | `JsonKVStorage` |
 | **vector_storage** | `str` | Storage type for embedding vectors. Supported types: `NanoVectorDBStorage`,`PGVectorStorage`,`MilvusVectorDBStorage`,`ChromaVectorDBStorage`,`FaissVectorDBStorage`,`MongoVectorDBStorage`,`QdrantVectorDBStorage` | `NanoVectorDBStorage` |
 | **graph_storage** | `str` | Storage type for graph edges and nodes. Supported types: `NetworkXStorage`,`Neo4JStorage`,`PGGraphStorage`,`AGEStorage` | `NetworkXStorage` |
@@ -260,7 +260,7 @@ Use QueryParam to control the behavior your query:
 
 ```python
 class QueryParam:
-    """Configuration parameters for query execution in LightRAG."""
+    """Configuration parameters for query execution in ZestRAG."""
 
     mode: Literal["local", "global", "hybrid", "naive", "mix", "bypass"] = "global"
     """Specifies the retrieval mode:
@@ -324,12 +324,12 @@ class QueryParam:
 
 ### LLM and Embedding Injection
 
-LightRAG requires the utilization of LLM and Embedding models to accomplish document indexing and querying tasks. During the initialization phase, it is necessary to inject the invocation methods of the relevant models into LightRAG：
+ZestRAG requires the utilization of LLM and Embedding models to accomplish document indexing and querying tasks. During the initialization phase, it is necessary to inject the invocation methods of the relevant models into ZestRAG：
 
 <details>
 <summary> <b>Using Open AI-like APIs</b> </summary>
 
-* LightRAG also supports Open AI-like chat/embeddings APIs:
+* ZestRAG also supports Open AI-like chat/embeddings APIs:
 
 ```python
 async def llm_model_func(
@@ -354,7 +354,7 @@ async def embedding_func(texts: list[str]) -> np.ndarray:
     )
 
 async def initialize_rag():
-    rag = LightRAG(
+    rag = ZestRAG(
         working_dir=WORKING_DIR,
         llm_model_func=llm_model_func,
         embedding_func=EmbeddingFunc(
@@ -375,13 +375,13 @@ async def initialize_rag():
 <details>
 <summary> <b>Using Hugging Face Models</b> </summary>
 
-* If you want to use Hugging Face models, you only need to set LightRAG as follows:
+* If you want to use Hugging Face models, you only need to set ZestRAG as follows:
 
-See `lightrag_hf_demo.py`
+See `zestrag_hf_demo.py`
 
 ```python
-# Initialize LightRAG with Hugging Face model
-rag = LightRAG(
+# Initialize ZestRAG with Hugging Face model
+rag = ZestRAG(
     working_dir=WORKING_DIR,
     llm_model_func=hf_model_complete,  # Use Hugging Face model for text generation
     llm_model_name='meta-llama/Llama-3.1-8B-Instruct',  # Model name from Hugging Face
@@ -406,11 +406,11 @@ rag = LightRAG(
 
 If you want to use Ollama models, you need to pull model you plan to use and embedding model, for example `nomic-embed-text`.
 
-Then you only need to set LightRAG as follows:
+Then you only need to set ZestRAG as follows:
 
 ```python
-# Initialize LightRAG with Ollama model
-rag = LightRAG(
+# Initialize ZestRAG with Ollama model
+rag = ZestRAG(
     working_dir=WORKING_DIR,
     llm_model_func=ollama_model_complete,  # Use Ollama model for text generation
     llm_model_name='your_model_name', # Your model name
@@ -428,7 +428,7 @@ rag = LightRAG(
 
 * **Increasing context size**
 
-In order for LightRAG to work context should be at least 32k tokens. By default Ollama models have context size of 8k. You can achieve this using one of two ways:
+In order for ZestRAG to work context should be at least 32k tokens. By default Ollama models have context size of 8k. You can achieve this using one of two ways:
 
 * **Increasing the `num_ctx` parameter in Modelfile**
 
@@ -461,7 +461,7 @@ ollama create -f Modelfile qwen2m
 Tiy can use `llm_model_kwargs` param to configure ollama:
 
 ```python
-rag = LightRAG(
+rag = ZestRAG(
     working_dir=WORKING_DIR,
     llm_model_func=ollama_model_complete,  # Use Ollama model for text generation
     llm_model_name='your_model_name', # Your model name
@@ -486,28 +486,28 @@ In order to run this experiment on low RAM GPU you should select small model and
 <details>
 <summary> <b>LlamaIndex</b> </summary>
 
-LightRAG supports integration with LlamaIndex (`llm/llama_index_impl.py`):
+ZestRAG supports integration with LlamaIndex (`llm/llama_index_impl.py`):
 
 - Integrates with OpenAI and other providers through LlamaIndex
-- See [LlamaIndex Documentation](lightrag/llm/Readme.md) for detailed setup and examples
+- See [LlamaIndex Documentation](zestrag/llm/Readme.md) for detailed setup and examples
 
 **Example Usage**
 
 ```python
 # Using LlamaIndex with direct OpenAI access
 import asyncio
-from lightrag import LightRAG
-from lightrag.llm.llama_index_impl import llama_index_complete_if_cache, llama_index_embed
+from zestrag import ZestRAG
+from zestrag.llm.llama_index_impl import llama_index_complete_if_cache, llama_index_embed
 from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.llms.openai import OpenAI
-from lightrag.kg.shared_storage import initialize_pipeline_status
-from lightrag.utils import setup_logger
+from zestrag.kg.shared_storage import initialize_pipeline_status
+from zestrag.utils import setup_logger
 
-# Setup log handler for LightRAG
-setup_logger("lightrag", level="INFO")
+# Setup log handler for ZestRAG
+setup_logger("zestrag", level="INFO")
 
 async def initialize_rag():
-    rag = LightRAG(
+    rag = ZestRAG(
         working_dir="your/path",
         llm_model_func=llama_index_complete_if_cache,  # LlamaIndex-compatible completion function
         embedding_func=EmbeddingFunc(    # LlamaIndex-compatible embedding function
@@ -555,16 +555,16 @@ if __name__ == "__main__":
 
 **For detailed documentation and examples, see:**
 
-- [LlamaIndex Documentation](lightrag/llm/Readme.md)
-- [Direct OpenAI Example](examples/lightrag_llamaindex_direct_demo.py)
-- [LiteLLM Proxy Example](examples/lightrag_llamaindex_litellm_demo.py)
+- [LlamaIndex Documentation](zestrag/llm/Readme.md)
+- [Direct OpenAI Example](examples/zestrag_llamaindex_direct_demo.py)
+- [LiteLLM Proxy Example](examples/zestrag_llamaindex_litellm_demo.py)
 
 </details>
 
 ### Conversation History Support
 
 
-LightRAG now supports multi-turn dialogue through the conversation history feature. Here's how to use it:
+ZestRAG now supports multi-turn dialogue through the conversation history feature. Here's how to use it:
 
 <details>
   <summary> <b> Usage Example </b></summary>
@@ -595,7 +595,7 @@ response = rag.query(
 
 ### User Prompt vs. Query
 
-When using LightRAG for content queries, avoid combining the search process with unrelated output processing, as this significantly impacts query effectiveness. The `user_prompt` parameter in Query Param is specifically designed to address this issue — it does not participate in the RAG retrieval phase, but rather guides the LLM on how to process the retrieved results after the query is completed. Here's how to use it:
+When using ZestRAG for content queries, avoid combining the search process with unrelated output processing, as this significantly impacts query effectiveness. The `user_prompt` parameter in Query Param is specifically designed to address this issue — it does not participate in the RAG retrieval phase, but rather guides the LLM on how to process the retrieved results after the query is completed. Here's how to use it:
 
 ```python
 # Create query parameters
@@ -634,7 +634,7 @@ rag.insert("Text")
 rag.insert(["TEXT1", "TEXT2",...])
 
 # Batch Insert with custom batch size configuration
-rag = LightRAG(
+rag = ZestRAG(
     ...
     working_dir=WORKING_DIR,
     max_parallel_insert = 4
@@ -672,7 +672,7 @@ This is useful for scenarios where you want to process documents in the backgrou
 And using a routine to process new documents.
 
 ```python
-rag = LightRAG(..)
+rag = ZestRAG(..)
 
 await rag.apipeline_enqueue_documents(input)
 # Your routine in loop
@@ -715,7 +715,7 @@ rag.insert(documents, file_paths=file_paths)
 
 ### Storage
 
-LightRAG uses four types of storage, each of which has multiple implementation options. When initializing LightRAG, the implementation schemes for these four types of storage can be set through parameters. For details, please refer to the previous LightRAG initialization parameters.
+ZestRAG uses four types of storage, each of which has multiple implementation options. When initializing ZestRAG, the implementation schemes for these four types of storage can be set through parameters. For details, please refer to the previous ZestRAG initialization parameters.
 
 <details>
 <summary> <b>Using Neo4J for Storage</b> </summary>
@@ -729,16 +729,16 @@ export NEO4J_URI="neo4j://localhost:7687"
 export NEO4J_USERNAME="neo4j"
 export NEO4J_PASSWORD="password"
 
-# Setup logger for LightRAG
-setup_logger("lightrag", level="INFO")
+# Setup logger for ZestRAG
+setup_logger("zestrag", level="INFO")
 
 # When you launch the project be sure to override the default KG: NetworkX
 # by specifying kg="Neo4JStorage".
 
 # Note: Default settings use NetworkX
-# Initialize LightRAG with Neo4J implementation.
+# Initialize ZestRAG with Neo4J implementation.
 async def initialize_rag():
-    rag = LightRAG(
+    rag = ZestRAG(
         working_dir=WORKING_DIR,
         llm_model_func=gpt_4o_mini_complete,  # Use gpt_4o_mini_complete LLM model
         graph_storage="Neo4JStorage", #<-----------override KG default
@@ -763,7 +763,7 @@ For production level scenarios you will most likely want to leverage an enterpri
 
 * PostgreSQL is lightweight,the whole binary distribution including all necessary plugins can be zipped to 40MB: Ref to [Windows Release](https://github.com/ShanGor/apache-age-windows/releases/tag/PG17%2Fv1.5.0-rc0) as it is easy to install for Linux/Mac.
 * If you prefer docker, please start with this image if you are a beginner to avoid hiccups (DO read the overview): https://hub.docker.com/r/shangor/postgres-for-rag
-* How to start? Ref to: [examples/lightrag_zhipu_postgres_demo.py](https://github.com/HKUDS/LightRAG/blob/main/examples/lightrag_zhipu_postgres_demo.py)
+* How to start? Ref to: [examples/zestrag_zhipu_postgres_demo.py](https://github.com/HKUDS/ZestRAG/blob/main/examples/zestrag_zhipu_postgres_demo.py)
 * Create index for AGE example: (Change below `dickens` to your graph name if necessary)
   ```sql
   load 'age';
@@ -826,8 +826,8 @@ async def embedding_func(texts: list[str]) -> np.ndarray:
     embeddings = model.encode(texts, convert_to_numpy=True)
     return embeddings
 
-# Initialize LightRAG with the LLM model function and embedding function
-rag = LightRAG(
+# Initialize ZestRAG with the LLM model function and embedding function
+rag = ZestRAG(
     working_dir=WORKING_DIR,
     llm_model_func=llm_model_func,
     embedding_func=EmbeddingFunc(
@@ -846,7 +846,7 @@ rag = LightRAG(
 
 ## Edit Entities and Relations
 
-LightRAG now supports comprehensive knowledge graph management capabilities, allowing you to create, edit, and delete entities and relationships within your knowledge graph.
+ZestRAG now supports comprehensive knowledge graph management capabilities, allowing you to create, edit, and delete entities and relationships within your knowledge graph.
 
 <details>
   <summary> <b> Create Entities and Relations </b></summary>
@@ -992,7 +992,7 @@ These operations maintain data consistency across both the graph database and ve
 <details>
 <summary> <b>Merge Entities and Their Relationships</b> </summary>
 
-LightRAG now supports merging multiple entities into a single entity, automatically handling all relationships:
+ZestRAG now supports merging multiple entities into a single entity, automatically handling all relationships:
 
 ```python
 # Basic entity merging
@@ -1060,14 +1060,14 @@ When merging entities:
 
 ## Multimodal Document Processing (MinerU Integration)
 
-LightRAG now supports comprehensive multi-modal document processing through [MinerU](https://github.com/opendatalab/MinerU) integration, enabling advanced parsing and retrieval-augmented generation (RAG) capabilities. This powerful feature allows you to handle multi-modal documents seamlessly, extracting structured content—including text, images, tables, and formulas—from various document formats for integration into your RAG pipeline.
+ZestRAG now supports comprehensive multi-modal document processing through [MinerU](https://github.com/opendatalab/MinerU) integration, enabling advanced parsing and retrieval-augmented generation (RAG) capabilities. This powerful feature allows you to handle multi-modal documents seamlessly, extracting structured content—including text, images, tables, and formulas—from various document formats for integration into your RAG pipeline.
 
 **Key Features:**
 - **Multimodal Document Handling**: Process complex documents containing mixed content types (text, images, tables, formulas)
 - **Comprehensive Format Support**: Parse PDFs, images, DOC/DOCX/PPT/PPTX, and additional file types
 - **Multi-Element Extraction**: Extract and index text, images, tables, formulas, and document structure
 - **Multimodal Retrieval**: Query and retrieve diverse content types (text, images, tables, formulas) within RAG workflows
-- **Seamless Integration**: Works smoothly with LightRAG core and RAG-Anything frameworks
+- **Seamless Integration**: Works smoothly with ZestRAG core and RAG-Anything frameworks
 
 **Quick Start:**
 1. Install dependencies:
@@ -1077,24 +1077,24 @@ LightRAG now supports comprehensive multi-modal document processing through [Min
 2. Download MinerU model weights (refer to [MinerU Integration Guide](docs/mineru_integration_en.md))
 3. Process multi-modal documents using the new MineruParser or RAG-Anything's process_document_complete:
    ```python
-   from lightrag.mineru_parser import MineruParser
+   from zestrag.mineru_parser import MineruParser
    content_list, md_content = MineruParser.parse_pdf('path/to/document.pdf', 'output_dir')
    # or for any file type:
    content_list, md_content = MineruParser.parse_document('path/to/file', 'auto', 'output_dir')
    ```
-4. Query multimodal content with LightRAG refer to [docs/mineru_integration_en.md](docs/mineru_integration_en.md).
+4. Query multimodal content with ZestRAG refer to [docs/mineru_integration_en.md](docs/mineru_integration_en.md).
 
 ## Token Usage Tracking
 
 <details>
 <summary> <b>Overview and Usage</b> </summary>
 
-LightRAG provides a TokenTracker tool to monitor and manage token consumption by large language models. This feature is particularly useful for controlling API costs and optimizing performance.
+ZestRAG provides a TokenTracker tool to monitor and manage token consumption by large language models. This feature is particularly useful for controlling API costs and optimizing performance.
 
 ### Usage
 
 ```python
-from lightrag.utils import TokenTracker
+from zestrag.utils import TokenTracker
 
 # Create TokenTracker instance
 token_tracker = TokenTracker()
@@ -1126,8 +1126,8 @@ print("Token usage:", token_tracker.get_usage())
 
 ### Practical Examples
 You can refer to these examples for implementing token tracking:
-- `examples/lightrag_gemini_track_token_demo.py`: Token tracking example using Google Gemini model
-- `examples/lightrag_siliconcloud_track_token_demo.py`: Token tracking example using SiliconCloud model
+- `examples/zestrag_gemini_track_token_demo.py`: Token tracking example using Google Gemini model
+- `examples/zestrag_siliconcloud_track_token_demo.py`: Token tracking example using SiliconCloud model
 
 These examples demonstrate how to effectively use the TokenTracker feature with different models and scenarios.
 
@@ -1137,7 +1137,7 @@ These examples demonstrate how to effectively use the TokenTracker feature with 
 
 ### Overview
 
-LightRAG allows you to export your knowledge graph data in various formats for analysis, sharing, and backup purposes. The system supports exporting entities, relations, and relationship data.
+ZestRAG allows you to export your knowledge graph data in various formats for analysis, sharing, and backup purposes. The system supports exporting entities, relations, and relationship data.
 
 ### Export Functions
 
@@ -1225,13 +1225,13 @@ Valid modes are:
 
 </details>
 
-## LightRAG API
+## ZestRAG API
 
-The LightRAG Server is designed to provide Web UI and API support.  **For more information about LightRAG Server, please refer to [LightRAG Server](./lightrag/api/README.md).**
+The ZestRAG Server is designed to provide Web UI and API support.  **For more information about ZestRAG Server, please refer to [ZestRAG Server](./zestrag/api/README.md).**
 
 ## Graph Visualization
 
-The LightRAG Server offers a comprehensive knowledge graph visualization feature. It supports various gravity layouts, node queries, subgraph filtering, and more. **For more information about LightRAG Server, please refer to [LightRAG Server](./lightrag/api/README.md).**
+The ZestRAG Server offers a comprehensive knowledge graph visualization feature. It supports various gravity layouts, node queries, subgraph filtering, and more. **For more information about ZestRAG Server, please refer to [ZestRAG Server](./zestrag/api/README.md).**
 
 ![iShot_2025-03-23_12.40.08](./README.assets/iShot_2025-03-23_12.40.08.png)
 
@@ -1239,11 +1239,11 @@ The LightRAG Server offers a comprehensive knowledge graph visualization feature
 
 ### Dataset
 
-The dataset used in LightRAG can be downloaded from [TommyChien/UltraDomain](https://huggingface.co/datasets/TommyChien/UltraDomain).
+The dataset used in ZestRAG can be downloaded from [TommyChien/UltraDomain](https://huggingface.co/datasets/TommyChien/UltraDomain).
 
 ### Generate Query
 
-LightRAG uses the following prompt to generate high-level queries, with the corresponding code in `example/generate_query.py`.
+ZestRAG uses the following prompt to generate high-level queries, with the corresponding code in `example/generate_query.py`.
 
 <details>
 <summary> Prompt </summary>
@@ -1276,7 +1276,7 @@ Output the results in the following structure:
 
 ### Batch Eval
 
-To evaluate the performance of two RAG systems on high-level queries, LightRAG uses the following prompt, with the specific code available in `reproduce/batch_eval.py`.
+To evaluate the performance of two RAG systems on high-level queries, ZestRAG uses the following prompt, with the specific code available in `reproduce/batch_eval.py`.
 
 <details>
 <summary> Prompt </summary>
@@ -1330,22 +1330,22 @@ Output your evaluation in the following JSON format:
 
 |                      |**Agriculture**|            |**CS**|            |**Legal**|            |**Mix**|            |
 |----------------------|---------------|------------|------|------------|---------|------------|-------|------------|
-|                      |NaiveRAG|**LightRAG**|NaiveRAG|**LightRAG**|NaiveRAG|**LightRAG**|NaiveRAG|**LightRAG**|
+|                      |NaiveRAG|**ZestRAG**|NaiveRAG|**ZestRAG**|NaiveRAG|**ZestRAG**|NaiveRAG|**ZestRAG**|
 |**Comprehensiveness**|32.4%|**67.6%**|38.4%|**61.6%**|16.4%|**83.6%**|38.8%|**61.2%**|
 |**Diversity**|23.6%|**76.4%**|38.0%|**62.0%**|13.6%|**86.4%**|32.4%|**67.6%**|
 |**Empowerment**|32.4%|**67.6%**|38.8%|**61.2%**|16.4%|**83.6%**|42.8%|**57.2%**|
 |**Overall**|32.4%|**67.6%**|38.8%|**61.2%**|15.2%|**84.8%**|40.0%|**60.0%**|
-|                      |RQ-RAG|**LightRAG**|RQ-RAG|**LightRAG**|RQ-RAG|**LightRAG**|RQ-RAG|**LightRAG**|
+|                      |RQ-RAG|**ZestRAG**|RQ-RAG|**ZestRAG**|RQ-RAG|**ZestRAG**|RQ-RAG|**ZestRAG**|
 |**Comprehensiveness**|31.6%|**68.4%**|38.8%|**61.2%**|15.2%|**84.8%**|39.2%|**60.8%**|
 |**Diversity**|29.2%|**70.8%**|39.2%|**60.8%**|11.6%|**88.4%**|30.8%|**69.2%**|
 |**Empowerment**|31.6%|**68.4%**|36.4%|**63.6%**|15.2%|**84.8%**|42.4%|**57.6%**|
 |**Overall**|32.4%|**67.6%**|38.0%|**62.0%**|14.4%|**85.6%**|40.0%|**60.0%**|
-|                      |HyDE|**LightRAG**|HyDE|**LightRAG**|HyDE|**LightRAG**|HyDE|**LightRAG**|
+|                      |HyDE|**ZestRAG**|HyDE|**ZestRAG**|HyDE|**ZestRAG**|HyDE|**ZestRAG**|
 |**Comprehensiveness**|26.0%|**74.0%**|41.6%|**58.4%**|26.8%|**73.2%**|40.4%|**59.6%**|
 |**Diversity**|24.0%|**76.0%**|38.8%|**61.2%**|20.0%|**80.0%**|32.4%|**67.6%**|
 |**Empowerment**|25.2%|**74.8%**|40.8%|**59.2%**|26.0%|**74.0%**|46.0%|**54.0%**|
 |**Overall**|24.8%|**75.2%**|41.6%|**58.4%**|26.4%|**73.6%**|42.4%|**57.6%**|
-|                      |GraphRAG|**LightRAG**|GraphRAG|**LightRAG**|GraphRAG|**LightRAG**|GraphRAG|**LightRAG**|
+|                      |GraphRAG|**ZestRAG**|GraphRAG|**ZestRAG**|GraphRAG|**ZestRAG**|GraphRAG|**ZestRAG**|
 |**Comprehensiveness**|45.6%|**54.4%**|48.4%|**51.6%**|48.4%|**51.6%**|**50.4%**|49.6%|
 |**Diversity**|22.8%|**77.2%**|40.8%|**59.2%**|26.4%|**73.6%**|36.0%|**64.0%**|
 |**Empowerment**|41.2%|**58.8%**|45.2%|**54.8%**|43.6%|**56.4%**|**50.8%**|49.2%|
@@ -1418,7 +1418,7 @@ def extract_unique_contexts(input_directory, output_directory):
 
 ### Step-1 Insert Contexts
 
-For the extracted contexts, we insert them into the LightRAG system.
+For the extracted contexts, we insert them into the ZestRAG system.
 
 <details>
 <summary> Code </summary>
@@ -1471,7 +1471,7 @@ def get_summary(context, tot_tokens=2000):
 
 ### Step-3 Query
 
-For the queries generated in Step-2, we will extract them and query LightRAG.
+For the queries generated in Step-2, we will extract them and query ZestRAG.
 
 <details>
 <summary> Code </summary>
@@ -1492,11 +1492,11 @@ def extract_queries(file_path):
 
 ## Star History
 
-<a href="https://star-history.com/#HKUDS/LightRAG&Date">
+<a href="https://star-history.com/#HKUDS/ZestRAG&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=HKUDS/LightRAG&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=HKUDS/LightRAG&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=HKUDS/LightRAG&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=HKUDS/ZestRAG&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=HKUDS/ZestRAG&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=HKUDS/ZestRAG&type=Date" />
  </picture>
 </a>
 
@@ -1504,19 +1504,19 @@ def extract_queries(file_path):
 
 Thank you to all our contributors!
 
-<a href="https://github.com/HKUDS/LightRAG/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=HKUDS/LightRAG" />
+<a href="https://github.com/HKUDS/ZestRAG/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=HKUDS/ZestRAG" />
 </a>
 
 ## Troubleshooting
 
 ### Common Initialization Errors
 
-If you encounter these errors when using LightRAG:
+If you encounter these errors when using ZestRAG:
 
 1. **`AttributeError: __aenter__`**
    - **Cause**: Storage backends not initialized
-   - **Solution**: Call `await rag.initialize_storages()` after creating the LightRAG instance
+   - **Solution**: Call `await rag.initialize_storages()` after creating the ZestRAG instance
 
 2. **`KeyError: 'history_messages'`**
    - **Cause**: Pipeline status not initialized
@@ -1526,7 +1526,7 @@ If you encounter these errors when using LightRAG:
    - **Cause**: Neither initialization method was called
    - **Solution**: Always follow this pattern:
    ```python
-   rag = LightRAG(...)
+   rag = ZestRAG(...)
    await rag.initialize_storages()
    await initialize_pipeline_status()
    ```
@@ -1538,8 +1538,8 @@ When switching between different embedding models, you must clear the data direc
 ## 🌟Citation
 
 ```python
-@article{guo2024lightrag,
-title={LightRAG: Simple and Fast Retrieval-Augmented Generation},
+@article{guo2024zestrag,
+title={ZestRAG: Simple and Fast Retrieval-Augmented Generation},
 author={Zirui Guo and Lianghao Xia and Yanhua Yu and Tu Ao and Chao Huang},
 year={2024},
 eprint={2410.05779},
